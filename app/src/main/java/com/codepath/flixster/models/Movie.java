@@ -2,11 +2,13 @@ package com.codepath.flixster.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 /**
  * Created by kkong on 6/21/17.
  */
 
+@Parcel // Class is Parcelable
 public class Movie {
 
     // Values from API
@@ -14,6 +16,10 @@ public class Movie {
     private String overview;
     private String posterPath; // Only the path
     private String backdropPath;
+    Double voteAverage;
+
+    // Default constructor required for Parceler
+    public Movie() {}
 
     // Initialize from JSON data
     public Movie(JSONObject object) throws JSONException {
@@ -21,6 +27,7 @@ public class Movie {
         overview = object.getString("overview");
         posterPath = object.getString("poster_path");
         backdropPath = object.getString("backdrop_path");
+        voteAverage = object.getDouble("vote_average");
     }
 
     public String getTitle() {
@@ -37,5 +44,9 @@ public class Movie {
 
     public String getBackdropPath() {
         return backdropPath;
+    }
+
+    public Double getVoteAverage() {
+        return voteAverage;
     }
 }
