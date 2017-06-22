@@ -81,7 +81,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         Glide.with(context)
                 .load(imageUrl)
                 .bitmapTransform(new RoundedCornersTransformation(context, 25, 0))
-                .placeholder(R.drawable.flicks_movie_placeholder)
+                .placeholder(placeholderId)
                 .error(placeholderId)
                 .into(imageView);
     }
