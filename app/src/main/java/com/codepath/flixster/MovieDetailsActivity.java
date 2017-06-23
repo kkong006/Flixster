@@ -46,6 +46,7 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
     @BindView(R.id.tvTitle) TextView tvTitle;
     @BindView(R.id.tvOverview) TextView tvOverview;
     @BindView(R.id.rvVoteAverage) RatingBar rbVoteAverage;
+    @BindView(R.id.tvReleaseDate) TextView tvReleaseDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,9 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
 
         // Unwrap the movie passed in via intent, using its simple name as a key
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
+        if(movie.getReleaseDate() != null) {
+            tvReleaseDate.setText(movie.getReleaseDate().substring(0, 4));
+        }
 
         Log.d(TAG, String.format("Showing details for '%s'", movie.getTitle()));
 
@@ -128,4 +132,9 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
             }
         });
     }
+
+//    private void getGenre() {
+//        // Create the URL
+//
+//    }
 }

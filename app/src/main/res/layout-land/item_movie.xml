@@ -13,6 +13,7 @@
         android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
         android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/flicks_backdrop_placeholder" />
 
@@ -23,9 +24,12 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivBackdropImage"
         android:text="Movie Title"
-        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorHighlight"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/tvOverview"
@@ -34,6 +38,8 @@
         android:layout_below="@+id/tvTitle"
         android:layout_toEndOf="@+id/ivBackdropImage"
         android:layout_toRightOf="@+id/ivBackdropImage"
-        android:text="Overview and synopsis" />
+        android:text="Overview and synopsis"
+        android:textColor="@android:color/white"
+        android:layout_marginRight="10dp" />
 
 </RelativeLayout>
