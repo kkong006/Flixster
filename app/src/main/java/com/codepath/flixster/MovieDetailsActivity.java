@@ -39,6 +39,7 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
     Movie movie;
 
     String videoId;
+    String genre;
 
     AsyncHttpClient client;
 
@@ -132,9 +133,4 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
             }
         });
     }
-
-//    private void getGenre() {
-//        // Create the URL
-//
-//    }
 }
