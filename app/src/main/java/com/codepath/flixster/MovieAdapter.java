@@ -3,6 +3,7 @@ package com.codepath.flixster;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,7 +87,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         Glide.with(context)
                 .load(imageUrl)
                 .bitmapTransform(new RoundedCornersTransformation(context, 25, 0))
-                .placeholder(R.drawable.flicks_movie_placeholder)
+                .placeholder(placeholderId)
                 .error(placeholderId)
                 .into(imageView);
     }
@@ -101,17 +102,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         // Track view objects
-        ImageView ivPosterImage;
-        ImageView ivBackdropImage;
+        @Nullable @BindView(R.id.ivPosterImage) ImageView ivPosterImage;
+        @Nullable @BindView(R.id.ivBackdropImage) ImageView ivBackdropImage;
         @BindView(R.id.tvOverview) TextView tvTitle;
         @BindView(R.id.tvTitle) TextView tvOverview;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            // Lookup view objects by id
-            ivPosterImage = (ImageView) itemView.findViewById(R.id.ivPosterImage);
-            ivBackdropImage = (ImageView) itemView.findViewById(R.id.ivBackdropImage);
             // Add this as itemView's OnClickListener
             itemView.setOnClickListener(this);
         }
