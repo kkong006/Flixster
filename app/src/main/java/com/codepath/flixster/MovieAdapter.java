@@ -70,7 +70,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         boolean isPortrait = context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
 
         // Build URL for poster image
-        String imageUrl = config.getImageUrl(config.getPosterSize(), movie.getPosterPath());
+        String imageUrl;
 
         // If in portrait mode, load the poster image
         if(isPortrait) {
@@ -121,12 +121,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             int position = getAdapterPosition();
             // Make sure the position is valid, i.e. actually exists in the view
             if(position != RecyclerView.NO_POSITION) {
-                // Get the ovie at the position, this won't work if the class is static
+                // Get the movie at the position, this won't work if the class is static
                 Movie movie = movies.get(position);
                 // Create intent for the new activity
                 Intent intent = new Intent(context, MovieDetailsActivity.class);
                 // Serialize the movie using parceler, use its short name as a key
                 intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+
                 // Show the activity
                 context.startActivity(intent);
             }
