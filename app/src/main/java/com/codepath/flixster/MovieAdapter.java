@@ -104,8 +104,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         // Track view objects
         @Nullable @BindView(R.id.ivPosterImage) ImageView ivPosterImage;
         @Nullable @BindView(R.id.ivBackdropImage) ImageView ivBackdropImage;
-        @BindView(R.id.tvOverview) TextView tvTitle;
-        @BindView(R.id.tvTitle) TextView tvOverview;
+        @BindView(R.id.tvTitle) TextView tvTitle;
+        @BindView(R.id.tvOverview) TextView tvOverview;
 
         public ViewHolder(View itemView) {
             super(itemView);

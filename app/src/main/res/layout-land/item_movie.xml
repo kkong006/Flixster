@@ -34,5 +34,6 @@
         android:layout_below="@+id/tvTitle"
         android:layout_toEndOf="@+id/ivBackdropImage"
         android:layout_toRightOf="@+id/ivBackdropImage"
-        android:text="TextView" />
+        android:text="Overview and synopsis" />
+
 </RelativeLayout>

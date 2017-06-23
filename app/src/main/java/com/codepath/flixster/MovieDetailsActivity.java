@@ -31,7 +31,6 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
 
     // Intent Keys
     public static final String MOVIE_ID_KEY = "MOVIE_ID";
-    public static final String VIDEO_ID_KEY = "VIDEO_ID";
 
     // Class TAG
     private final String TAG = "MovieDetailsActivity";
